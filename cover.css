@@ -1,0 +1,431 @@
+@font-face {
+  font-family: 'Roashe';
+  src: url('/assets/Roashe.ttf') format('truetype');
+}
+
+/* Estilo para Lobster */
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Estilo para Merriweather */
+.merriweather-bold {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.knewave-regular {
+  font-family: "Knewave", system-ui;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+  
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poetsen One';
+  font-style: bold;
+  background-color: #ffffff;
+  color: #000000;
+  height: 100%;
+}
+
+html, body{
+  height: 100%;
+}
+
+/* Header que ocupa el 100% del viewport */
+
+
+.header-bg {
+  position: relative;
+  width: 100%;
+  height: 120%; /* altura del viewport */
+  background-image: url('jardin-san-macos-2.JPG');
+  background-size: cover; /* <-- cambia esto si quieres ver toda la imagen */
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.header-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* ajusta según se vea bien */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, white 100%);
+  z-index: 2;
+}
+
+
+.header-content {
+  position: center;
+  z-index: 2;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 15px;
+}
+
+/* Nav-bar flotante y fijo */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px 0;
+  z-index: 1000;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-bar.scrolled {
+  background-color: #cd3537;
+  padding: 10px 0;
+}
+
+.nav-masthead .nav-link {
+  color: #000000;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-masthead .nav-link:hover {
+  color: #d39819;
+}
+
+
+.nav-logo {
+  max-height: 250px;
+  max-width: 150px;
+}
+
+/* Contenido de ejemplo */
+.main-content {
+  padding: 40px 0;
+  min-height: 50vh; /* Solo para demostración */
+}
+
+.barra-div {
+  width: 100%;
+  height: 25%;
+  position: relative;
+  background-image: url('barra-nav-fav.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+}
+
+.barra-div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4); /* más sólido, más limpio */
+  z-index: 3;
+}
+
+.texto-container {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  z-index: 4;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  position: relative;
+}
+
+
+.texto {
+  font-weight: 1500; /* máximo grosor */
+  font-size: 80px;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  z-index: 4; /* Asegura que el texto esté por encima */
+  color: black; /* Ajusta el color para que se vea bien */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+
+
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .nav-logo {
+    
+  }
+  
+  .nav-bar.scrolled .nav-logo {
+    height: 100px;
+  }
+
+  .nav-bar{
+    
+  }
+  
+  .nav-masthead .nav-link {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .texto {
+
+    font-size: 40px;
+
+  }
+}
+
+.nosotros-section {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.007);
+  background-color: white;
+  min-height: 500px;
+}
+
+.intro{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+.image-side {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-side:hover img {
+  transform: scale(1.05);
+}
+
+/* Este es el que estaba mal, ya corregido */
+.image-side::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.952) 100%);
+}
+
+.inner-text{
+  padding: 50px;
+}
+
+/* Texto a la derecha */
+.text-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Ya tienes estas clases definidas */
+.section-title {
+  color: #F45B25;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 3px;
+  background-color: #F45B25;
+}
+
+.text-side p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.word-1 { color: #00a6ed; }
+.word-2 { color: #ee1313; }
+.word-3 { color: #ff3d8b; }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .nosotros-section {
+    flex-direction: column;
+  }
+
+  .image-side,
+  .text-side {
+    width: 100%;
+    flex: none;
+  }
+
+  .image-side::after {
+    width: 100%;
+    height: 30%;
+    top: auto;
+    bottom: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0) 0%, white 100%);
+  }
+}
+
+
+.collage-container {
+  padding: 40px;
+  background-color: #ffffffc2;
+}
+
+.masonry-grid {
+  display: flex;
+  width: 100%;
+}
+
+.masonry-column {
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.masonry-item {
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  flex-grow: 1;
+}
+
+
+
+.masonry-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.masonry-item:hover img {
+  transform: scale(1.05);
+}
+
+
+/* Alturas específicas para desktop */
+/* Columnas con imágenes altas */
+.masonry-column:nth-child(1) .masonry-item,
+.masonry-column:nth-child(4) .masonry-item {
+  height: 600px;
+}
+
+/* Columnas con 2 imágenes */
+.masonry-column:nth-child(2) .masonry-item,
+.masonry-column:nth-child(3) .masonry-item {
+  height: 290px;
+}
+
+.text-descrip{
+  font-size: 25px;
+}
+
+/* Ajustes para tablet */
+@media (max-width: 992px) {
+  .masonry-column:nth-child(1) .masonry-item {
+    height: 500px;
+  }
+  
+  .masonry-column:nth-child(2) .masonry-item,
+  .masonry-column:nth-child(3) .masonry-item {
+    height: 240px;
+  }
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+  .masonry-column:nth-child(1) .masonry-item {
+    height: 400px;
+  }
+  
+  .masonry-column:nth-child(2) .masonry-item,
+  .masonry-column:nth-child(3) .masonry-item {
+    height: 190px;
+  }
+  
+  .masonry-column {
+    padding: 0 5px;
+  }
+  
+  .masonry-item {
+    margin-bottom: 10px;
+  }
+}
+
+/* Ajustes extra pequeños */
+@media (max-width: 576px) {
+  .masonry-column:nth-child(1) .masonry-item {
+    height: 300px;
+  }
+  
+  .masonry-column:nth-child(2) .masonry-item,
+  .masonry-column:nth-child(3) .masonry-item {
+    height: 145px;
+  }
+}
+
+.wave-transition {
+  position: relative;
+  width: 100%;
+  height: 25px;
+  overflow: hidden;
+  z-index: 2;
+  margin-top: -5px; /* ajusta si hay separación */
+}
+.wave-transition svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
